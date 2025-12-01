@@ -11,6 +11,8 @@ import { CodeBlock } from '@/blocks/Code/Component'
 import { Hero } from '@/blocks/Hero_Block/Component'
 import { Slider } from '@/blocks/Slider/Component'
  import { Right} from '@/blocks/Right/Component'
+  import { FAQ } from  '@/blocks/FAQ/Component'
+   import { Partner}  from '@/blocks/Partner/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -21,7 +23,9 @@ const blockComponents = {
   code: CodeBlock,
   hero: Hero,
   slider: Slider,
-    right :Right
+    right :Right,
+    faq : FAQ,
+     partner : Partner
 
 }
 

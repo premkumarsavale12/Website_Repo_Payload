@@ -13,7 +13,7 @@ interface RightProps {
 
 export const Right: React.FC<RightProps> = ({ items = [] }) => {
 
-     console.log(items);
+    //  console.log(items);
       
   return (
 

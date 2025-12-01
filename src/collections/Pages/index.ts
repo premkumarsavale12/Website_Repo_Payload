@@ -16,6 +16,8 @@ import { Code } from '../../blocks/Code/config'
 import { heroBlock } from '../../blocks/Hero_Block/config'
 import { Slider } from '../../blocks/Slider/config'
 import { Right } from '../../blocks/Right/config'
+import { FAQ } from '../../blocks/FAQ/config'
+import { Partner } from '../../blocks/Partner/config'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -75,7 +77,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Code, heroBlock, Slider, Right],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Code, heroBlock, Slider, Right, FAQ, Partner],
               required: true,
               admin: {
                 initCollapsed: true,

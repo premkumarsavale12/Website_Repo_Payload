@@ -38,6 +38,7 @@ export const hero: Field = {
       ],
       required: true,
     },
+
     {
       name: 'richText',
       type: 'richText',
@@ -52,7 +53,12 @@ export const hero: Field = {
         },
       }),
       label: false,
+
     },
+
+
+
+
     linkGroup({
       overrides: {
         maxRows: 2,
@@ -64,7 +70,7 @@ export const hero: Field = {
 
       admin: {
         condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
-      
+
       },
       relationTo: 'media',
       required: true,
