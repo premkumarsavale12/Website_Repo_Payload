@@ -212,6 +212,8 @@ export interface Page {
     | Right
     | Faq
     | Partner
+    | Down
+    | Logo
   )[];
   meta?: {
     title?: string | null;
@@ -910,6 +912,60 @@ export interface Partner {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "down".
+ */
+export interface Down {
+  contact?: {
+    companyName?: string | null;
+    personName?: string | null;
+    street?: string | null;
+    zipCity?: string | null;
+    country?: string | null;
+    email?: string | null;
+    phone?: string | null;
+  };
+  officeHours?:
+    | {
+        day?: string | null;
+        time?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  navigation?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  legalLinks?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'down';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo".
+ */
+export interface Logo {
+  logos?:
+    | {
+        logo: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'logo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1222,6 +1278,8 @@ export interface PagesSelect<T extends boolean = true> {
         right?: T | RightSelect<T>;
         faq?: T | FaqSelect<T>;
         partner?: T | PartnerSelect<T>;
+        down?: T | DownSelect<T>;
+        logo?: T | LogoSelect<T>;
       };
   meta?:
     | T
@@ -1399,6 +1457,60 @@ export interface PartnerSelect<T extends boolean = true> {
     | T
     | {
         media?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "down_select".
+ */
+export interface DownSelect<T extends boolean = true> {
+  contact?:
+    | T
+    | {
+        companyName?: T;
+        personName?: T;
+        street?: T;
+        zipCity?: T;
+        country?: T;
+        email?: T;
+        phone?: T;
+      };
+  officeHours?:
+    | T
+    | {
+        day?: T;
+        time?: T;
+        id?: T;
+      };
+  navigation?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  legalLinks?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo_select".
+ */
+export interface LogoSelect<T extends boolean = true> {
+  logos?:
+    | T
+    | {
+        logo?: T;
         id?: T;
       };
   id?: T;

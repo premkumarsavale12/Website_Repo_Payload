@@ -13,6 +13,8 @@ import { Slider } from '@/blocks/Slider/Component'
  import { Right} from '@/blocks/Right/Component'
   import { FAQ } from  '@/blocks/FAQ/Component'
    import { Partner}  from '@/blocks/Partner/Component'
+   import { DownComponent} from '@/blocks/Down/Component'
+    import { Logo} from '@/blocks/Logo/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -25,7 +27,9 @@ const blockComponents = {
   slider: Slider,
     right :Right,
     faq : FAQ,
-     partner : Partner
+     partner : Partner,
+   down   :DownComponent,
+   logo : Logo
 
 }
 

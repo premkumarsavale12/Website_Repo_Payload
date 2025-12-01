@@ -26,6 +26,9 @@ export async function Footer() {
             {navItems.map(({ link }, i) => {
               return <CMSLink className="text-white" key={i} {...link} />
             })}
+             <ul>
+              <li>Premkumar Savale</li>
+             </ul>
           </nav>
         </div>
       </div>
