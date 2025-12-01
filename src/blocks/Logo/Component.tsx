@@ -33,7 +33,7 @@ export const Logo: React.FC<LogoBlockProps> = ({ logos }) => {
                     loop={true}
                     autoplay={{
                         delay: 2500,
-                        disableOnInteraction: false,
+                        // disableOnInteraction: false,
                     }}
                     breakpoints={{
                         640: {
