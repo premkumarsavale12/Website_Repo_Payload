@@ -20,6 +20,7 @@ import { FAQ } from '../../blocks/FAQ/config'
 import { Partner } from '../../blocks/Partner/config'
 import { Down } from '../../blocks/Down/config'
 import { Logo } from '../../blocks/Logo/config'
+ import { Conten} from '../../blocks/Conten/config'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -28,6 +29,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { Footer } from '@/Footer/Component'
+import { Data } from '@/blocks/Data/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -80,7 +82,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Code, heroBlock, Slider, Right, FAQ, Partner, Down, Logo],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Code, heroBlock, Slider, Right, FAQ, Partner, Down, Logo, Data, Conten],
               required: true,
               admin: {
                 initCollapsed: true,

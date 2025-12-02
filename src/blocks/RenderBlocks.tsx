@@ -10,11 +10,13 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { CodeBlock } from '@/blocks/Code/Component'
 import { Hero } from '@/blocks/Hero_Block/Component'
 import { Slider } from '@/blocks/Slider/Component'
- import { Right} from '@/blocks/Right/Component'
-  import { FAQ } from  '@/blocks/FAQ/Component'
-   import { Partner}  from '@/blocks/Partner/Component'
-   import { DownComponent} from '@/blocks/Down/Component'
-    import { Logo} from '@/blocks/Logo/Component'
+import { Right } from '@/blocks/Right/Component'
+import { FAQ } from '@/blocks/FAQ/Component'
+import { Partner } from '@/blocks/Partner/Component'
+import { DownComponent } from '@/blocks/Down/Component'
+import { Logo } from '@/blocks/Logo/Component'
+import { DataComponent } from '@/blocks/Data/Component'
+import { ConteComponent } from '@/blocks/Conten/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -25,11 +27,13 @@ const blockComponents = {
   code: CodeBlock,
   hero: Hero,
   slider: Slider,
-    right :Right,
-    faq : FAQ,
-     partner : Partner,
-   down   :DownComponent,
-   logo : Logo
+  right: Right,
+  faq: FAQ,
+  partner: Partner,
+  down: DownComponent,
+  logo: Logo,
+  data: DataComponent,
+  conten: ConteComponent
 
 }
 

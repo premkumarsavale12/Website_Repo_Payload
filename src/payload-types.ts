@@ -214,6 +214,8 @@ export interface Page {
     | Partner
     | Down
     | Logo
+    | Data
+    | Conten
   )[];
   meta?: {
     title?: string | null;
@@ -966,6 +968,36 @@ export interface Logo {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "data".
+ */
+export interface Data {
+  heading: string;
+  Paragraph: string;
+  label: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'data';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten".
+ */
+export interface Conten {
+  cards?:
+    | {
+        title: string;
+        Paragraph: string;
+        authorName?: string | null;
+        logo?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'conten';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1280,6 +1312,8 @@ export interface PagesSelect<T extends boolean = true> {
         partner?: T | PartnerSelect<T>;
         down?: T | DownSelect<T>;
         logo?: T | LogoSelect<T>;
+        data?: T | DataSelect<T>;
+        conten?: T | ContenSelect<T>;
       };
   meta?:
     | T
@@ -1510,6 +1544,34 @@ export interface LogoSelect<T extends boolean = true> {
   logos?:
     | T
     | {
+        logo?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "data_select".
+ */
+export interface DataSelect<T extends boolean = true> {
+  heading?: T;
+  Paragraph?: T;
+  label?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten_select".
+ */
+export interface ContenSelect<T extends boolean = true> {
+  cards?:
+    | T
+    | {
+        title?: T;
+        Paragraph?: T;
+        authorName?: T;
         logo?: T;
         id?: T;
       };
