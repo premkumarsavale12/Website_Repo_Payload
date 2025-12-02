@@ -1,3 +1,4 @@
+import RichText from "@/components/RichText";
 
 
 export const FAQ = (props: any) => {
@@ -11,19 +12,31 @@ export const FAQ = (props: any) => {
     return (
 
 
-        items.map((item: any, index: number) => (
+        items.map((item: any, index: number,) => (
 
 
 
 
             <div
                 key={item.id}
-                className="bg-white shadow-md rounded-xl p-6 mb-4 hover:shadow-2xl transition-shadow duration-300 w-full max-w-md mx-auto border border-gray-200"
+                className="bg-gradient-to-br from-gray-900 via-black to-gray-950 border border-gray-700/60  shadow-xl hover:shadow-3xl rounded-2xl p-7 mb-6  w-full max-w-xl mx-auto
+         transition-all duration-300  hover:-translate-y-1 hover:border-gray-500/50 "
             >
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors duration-200">
+                <h3
+                    className=" text-2xl font-semibold text-white  mb-4   tracking-tight transition-colors duration-200 hover:text-blue-400 "
+                >
                     {item.Question}
                 </h3>
-                <p className="text-gray-700 text-base leading-relaxed">{item.Answer}</p>
+
+                <div className="text-gray-300 text-base leading-relaxed">
+                    {item.richText && (
+                        <RichText
+                            className="prose prose-invert max-w-none"
+                            data={item.richText}
+                            enableGutter={false}
+                        />
+                    )}
+                </div>
             </div>
 
         ))

@@ -1,5 +1,10 @@
 import { Block } from "payload";
-
+import {
+    FixedToolbarFeature,
+    HeadingFeature,
+    InlineToolbarFeature,
+    lexicalEditor,
+} from '@payloadcms/richtext-lexical'
 
 
 export const FAQ: Block = {
@@ -16,7 +21,7 @@ export const FAQ: Block = {
         {
             name: 'items',
             type: 'array',
-            label: 'FAQ Question',
+            label: 'FAQ Item ',
             minRows: 1,
             fields: [
 
@@ -28,12 +33,20 @@ export const FAQ: Block = {
                 },
 
                 {
-                    name: 'Answer',
-                    type: 'textarea',
-                    label: 'Answer',
-                    required: true
-
-                }
+                    name: 'richText',
+                    type: 'richText',
+                    editor: lexicalEditor({
+                        features: ({ rootFeatures }) => {
+                            return [
+                                ...rootFeatures,
+                                HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                                FixedToolbarFeature(),
+                                InlineToolbarFeature(),
+                            ]
+                        },
+                    }),
+                    label: false,
+                },
             ]
         }
     ]

@@ -27,15 +27,8 @@ export const Right: Block = {
                     relationTo: 'media',
                     required: true
                 },
-                 
-                 {
-                     name:' label',
-                      type :'text',
-                       label:'Button Label',
-                        required :true
-                 },
-                  
-                  
+
+
                 {
                     name: 'richText',
                     type: 'richText',
@@ -51,6 +44,23 @@ export const Right: Block = {
                     }),
                     label: false,
                 },
+
+
+                {
+                    name: 'label',
+                    type: 'text',
+                    label: 'Button Label',
+                    required: true
+                },
+
+
+                {
+                    type: 'text',
+                    name: 'url',
+                    label: 'Button URL',
+                    required: true
+
+                }
             ]
 
         }

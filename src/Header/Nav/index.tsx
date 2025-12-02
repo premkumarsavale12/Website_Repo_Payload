@@ -13,11 +13,11 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   
   // Default nav items if none are present in CMS
   const defaultNavItems = [
-    { link: { label: 'Home', url: '/' } },
-    { link: { label: 'About', url: '/about' } },
+    { link: { label: 'Home', url: '/p' } },
+    { link: { label: 'About', url: '/about-' } },
     { link: { label: 'Contact', url: '/contact' } },
     { link: { label: 'Demo', url: '/demo' } },
-    { link: { label: 'Blog', url: '/posts' } },
+    { link: { label: 'Blog', url: '/blog' } },
   ]
 
   const itemsToShow = navItems.length > 0 ? navItems : defaultNavItems

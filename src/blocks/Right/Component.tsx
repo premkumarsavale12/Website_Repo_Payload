@@ -8,6 +8,7 @@ interface RightProps {
     media: any;
     richText: any;
     label: string;
+     url:string;
   }[];
 }
 
@@ -22,6 +23,9 @@ export const Right: React.FC<RightProps> = ({ items = [] }) => {
       <div className="flex flex-col gap-10">
 
         {items.map((item, index) => {
+
+           console.log(item);
+            
           const isEven = index % 2 === 0
           return (
 
@@ -53,6 +57,8 @@ export const Right: React.FC<RightProps> = ({ items = [] }) => {
                     {item.label}
                   </Button>
                 )}
+
+                 
               </div>
             </div>
 

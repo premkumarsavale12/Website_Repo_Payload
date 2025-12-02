@@ -20,7 +20,7 @@ import { FAQ } from '../../blocks/FAQ/config'
 import { Partner } from '../../blocks/Partner/config'
 import { Down } from '../../blocks/Down/config'
 import { Logo } from '../../blocks/Logo/config'
- import { Conten} from '../../blocks/Conten/config'
+ import { Conten} from '../../blocks/Conten/config' 
 import {
   MetaDescriptionField,
   MetaImageField,

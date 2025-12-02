@@ -857,7 +857,6 @@ export interface Right {
   items?:
     | {
         media: number | Media;
-        ' label': string;
         richText?: {
           root: {
             type: string;
@@ -873,6 +872,8 @@ export interface Right {
           };
           [k: string]: unknown;
         } | null;
+        label: string;
+        url: string;
         id?: string | null;
       }[]
     | null;
@@ -888,7 +889,21 @@ export interface Faq {
   items?:
     | {
         Question: string;
-        Answer: string;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
         id?: string | null;
       }[]
     | null;
@@ -1459,8 +1474,9 @@ export interface RightSelect<T extends boolean = true> {
     | T
     | {
         media?: T;
-        ' label'?: T;
         richText?: T;
+        label?: T;
+        url?: T;
         id?: T;
       };
   id?: T;
@@ -1475,7 +1491,7 @@ export interface FaqSelect<T extends boolean = true> {
     | T
     | {
         Question?: T;
-        Answer?: T;
+        richText?: T;
         id?: T;
       };
   id?: T;

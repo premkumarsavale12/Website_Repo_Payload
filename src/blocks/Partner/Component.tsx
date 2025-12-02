@@ -11,11 +11,12 @@ interface MediaItem {
     media: {
         url: string;
         alt?: string;
-    }
+    },
 }
 
 interface PartnerBlock {
     logos: MediaItem[];
+    Heading: string;
 }
 
 
@@ -33,14 +34,19 @@ const chunkArray = (array: MediaItem[], size: number) => {
 
 }
 
-export const Partner: React.FC<PartnerBlock> = ({ logos }) => {
+export const Partner: React.FC<PartnerBlock> = ({ logos, Heading }) => {
 
 
     const slides = chunkArray(logos, 3);
 
     return (
 
-        <Swiper
+        
+      <>
+        <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold">{Heading}</h2>
+        </div>
+         <Swiper
 
             modules={[Navigation, Autoplay]}
             navigation
@@ -78,5 +84,7 @@ export const Partner: React.FC<PartnerBlock> = ({ logos }) => {
                 </SwiperSlide>
             ))}
         </Swiper>
+      
+      </>
     )
 }
